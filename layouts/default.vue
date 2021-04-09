@@ -14,6 +14,7 @@
 
 <script>
 import { db } from '~/plugins/firebase'
+
 export default {
   data () {
     return {
@@ -24,7 +25,7 @@ export default {
     db.collection('channels').get()
       .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
-          this.channels.push({id: doc.id, ...doc.data()})
+            this.channels.push({id: doc.id, ...doc.data()})
         })
       })
   }
@@ -63,11 +64,18 @@ html {
   color: #DDDDDD;
   padding-top: 4px;
 }
+
+.sidebar a {
+  color: #DDDDDD;
+}
+
 .main-content {
   width: 100%;
   background: #F1F1F1;
   height: 100vh;
 }
+
+
 .button--green {
   display: inline-block;
   border-radius: 4px;

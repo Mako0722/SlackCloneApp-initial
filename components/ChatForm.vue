@@ -14,11 +14,13 @@ export default {
     }
   },
   methods: {
-addMessage(event) {
+    addMessage(event) {
       if (this.keyDownedForJPConversion(event)) { return }
       const channelId = this.$route.params.id
-      db.collection('channels').doc(channelId).collection('messages').add({ text: this.text })
-        .then(() => {
+      db.collection('channels').doc(channelId).collection('messages').add({
+        text: this.text,
+        createdAt: new Date().getTime()
+        }).then(() => {
           this.text = null
         })
     },

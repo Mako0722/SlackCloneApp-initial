@@ -1,10 +1,10 @@
 <template>
   <div class="container">
+    <button>ログイン</button>
   </div>
 </template>
 
 <script>
-import { firebase } from '~/plugins/firebase'
 export default {
   methods: {
   }
